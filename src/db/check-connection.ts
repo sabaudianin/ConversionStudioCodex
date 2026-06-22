@@ -1,5 +1,9 @@
-import { sql } from "drizzle-orm";
-import { getDb } from ".";
+import { config } from "dotenv";
+import { sql } from "drizzle-orm/sql";
+import { getDb } from "./index";
+
+config({ path: ".env.local" });
+config({ path: ".env" });
 
 async function main() {
   const db = getDb();
